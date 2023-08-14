@@ -21,6 +21,7 @@ private extension SceneDelegate {
 		let viewController = LoginAssembly.configure()
 		let navController = UINavigationController(rootViewController: viewController)
 		window?.rootViewController = navController
+		window?.overrideUserInterfaceStyle = .light
 		window?.makeKeyAndVisible()
 	}
 }
