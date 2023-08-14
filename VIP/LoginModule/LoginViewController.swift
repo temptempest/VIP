@@ -83,7 +83,7 @@ private extension LoginViewController {
 private extension LoginViewController {
 	func setupUI() {
 		title = L12.login
-		view.backgroundColor = L12.white
+		view.backgroundColor = L12.whiteColor
 		view.addSubview(vStackView)
 	}
 	func setupConstraints() {
@@ -108,7 +108,7 @@ private extension LoginViewController {
 		button.backgroundColor = L12.accentColor
 		button.setTitle(L12.enter, for: .normal)
 		button.titleLabel?.font = L12.enterButtonFont
-		button.setTitleColor(L12.white, for: .normal)
+		button.setTitleColor(L12.whiteColor, for: .normal)
 		return button
 	}
 	func makeVStackView(_ arrangedSubviews: [UIView]) -> UIStackView {
