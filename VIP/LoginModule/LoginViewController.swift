@@ -23,7 +23,7 @@ private enum L12 {
 	static let success = "Success"
 	static let failure = "Failure"
 	static let accentColor = UIColor.systemBlue
-	static let white = UIColor.white
+	static let whiteColor = UIColor.white
 }
 
 protocol ILoginViewController: AnyObject {
