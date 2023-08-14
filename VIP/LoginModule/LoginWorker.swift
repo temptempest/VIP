@@ -13,7 +13,7 @@
 import UIKit
 
 private enum L12 {
-	static let validLogon = "Admin"
+	static let validLogin = "Admin"
 }
 
 protocol ILoginWorker {
@@ -22,6 +22,6 @@ protocol ILoginWorker {
 
 final class LoginWorker: ILoginWorker {
 	func login(login: String) -> Bool {
-		login == L12.validLogon
+		login == L12.validLogin
 	}
 }
