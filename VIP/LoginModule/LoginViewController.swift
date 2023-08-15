@@ -24,6 +24,7 @@ private enum L12 {
 	static let failure = "Failure "
 	static let accentColor = UIColor.systemBlue
 	static let whiteColor = UIColor.white
+	static let backgroundColor = UIColor.secondarySystemBackground
 }
 
 protocol ILoginViewController: AnyObject {
@@ -75,7 +76,7 @@ private extension LoginViewController {
 private extension LoginViewController {
 	func setupUI() {
 		title = L12.login
-		view.backgroundColor = L12.whiteColor
+		view.backgroundColor = L12.backgroundColor
 		view.addSubview(vStackView)
 	}
 	func setupConstraints() {

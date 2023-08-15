@@ -22,6 +22,7 @@ private enum L12 {
 	static let cellIdentifier = String(describing: cellType)
 	static let cellNumberOfLines = 0
 	static let failure = "Failure "
+	static let backgroundColor = UIColor.secondarySystemBackground
 }
 
 final class NewsViewController: UIViewController, INewsViewController, UITableViewDelegate {
@@ -87,7 +88,7 @@ fileprivate extension NewsViewController {
 	func setupUI() {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = Category.title
-		tableView.backgroundColor = .secondarySystemBackground
+		tableView.backgroundColor = L12.backgroundColor
 		view.addSubview(tableView)
 	}
 	
