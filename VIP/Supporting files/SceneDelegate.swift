@@ -18,8 +18,24 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 private extension SceneDelegate {
 	func assembly(_ scene: UIWindowScene) {
 		window = UIWindow(windowScene: scene)
-		let viewController = LoginAssembly.configure()
-		let navController = UINavigationController(rootViewController: viewController)
+		
+		
+		let loginViewController = LoginAssembly.configure()
+		let newsViewController = NewsAssembly.configure()
+		let alertBuilder: IAlertsBuilder = AlertsBuilder()
+		let router = LoginRouter(
+			loginViewController: loginViewController,
+			newsViewController: newsViewController,
+			alertBuilder: alertBuilder
+		)
+		
+		
+		if let loginViewController = loginViewController as? LoginViewController {
+			loginViewController.router = router
+		}
+		
+
+		let navController = UINavigationController(rootViewController: loginViewController)
 		window?.rootViewController = navController
 		window?.overrideUserInterfaceStyle = .light
 		window?.makeKeyAndVisible()

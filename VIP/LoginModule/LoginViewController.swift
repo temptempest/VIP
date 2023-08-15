@@ -21,7 +21,7 @@ private enum L12 {
 	static let login = "Input Admin"
 	static let enter = "Enter"
 	static let success = "Success"
-	static let failure = "Failure"
+	static let failure = "Failure "
 	static let accentColor = UIColor.systemBlue
 	static let whiteColor = UIColor.white
 }
@@ -32,7 +32,7 @@ protocol ILoginViewController: AnyObject {
 
 final class LoginViewController: UIViewController, ILoginViewController {
 	var interactor: ILoginInteractor?
-	var alertBuilder: IAlertsBuilder?
+	var router: ILoginRouter?
 	
 	private lazy var loginTextField = makeTextField(placeholder: L12.login)
 	private lazy var enterButton = makeEnterButton()
@@ -51,17 +51,9 @@ extension LoginViewController {
 	func render(viewModel: LoginModels.ViewModel) {
 		switch viewModel {
 		case .success:
-			if let alert = alertBuilder?.buildOkAlert(with: L12.success, message: "", completion: {
-				print(L12.success)
-			}) {
-				present(alert, animated: true)
-			}
+			router?.routeToNews()
 		case .failure(let message):
-			if let alert = alertBuilder?.buildOkAlert(with: L12.failure, message: message, completion: {
-				print(L12.failure,":" , message)
-			}) {
-				present(alert, animated: true)
-			}
+			router?.showError(message: message)
 		}
 	}
 }

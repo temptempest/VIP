@@ -14,9 +14,6 @@ final class LoginAssembly {
 		let worker = LoginWorker()
 		let interactor = LoginInteractor(worker: worker, presenter: presenter)
 		viewController.interactor = interactor
-		
-		let alertBuilder: IAlertsBuilder = AlertsBuilder()
-		viewController.alertBuilder = alertBuilder
 		return viewController
 	}
 }
