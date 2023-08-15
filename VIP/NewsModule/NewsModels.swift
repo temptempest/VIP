@@ -41,7 +41,7 @@ enum News {
 }
 
 /// ---
-/// Reuseable Category & DataSource
+/// Reusable Category & DataSource
 enum NewsCategory: String, CaseIterable {
 	static let title = "News"
 	case todaySection = "Today"
